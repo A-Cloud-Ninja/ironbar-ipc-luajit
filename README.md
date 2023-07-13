@@ -1,12 +1,12 @@
 # ironbar-ipc-luajit
 Ironbar IPC implementation for Luajit
 
-##Dependencies
+## Dependencies
 - Single-file json implementation: https://github.com/rxi/json.lua
 - [Luajit](https://luajit.org/) or another compatible interpreter with a luajit-compatible FFI syntax (maybe [luaffi](https://github.com/jmckaskill/luaffi))
 
 
-##Basic usage:
+## Basic usage:
 - `require("ironbar")` Returns a function to obtain both the ironbar library, and the json library passed through.
 ```lua
 local ironbar,json = require("ironbar")()
@@ -29,7 +29,7 @@ ironbar("get_visible","bar_name")
 ```
 
 
-##Files within
+## Files within
 - cdefs.lua: Luajit FFI Cdefs for unix socket handling
 - packets.lua: Table format for automated parsing of arguments -> json structures
 - ironbar.lua: Main library, returns a function used to get both the ironbar module and json module used within.
