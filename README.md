@@ -1,5 +1,5 @@
 # ironbar-ipc-luajit
-Ironbar IPC implementation for Luajit
+[Ironbar](https://github.com/JakeStanger/ironbar) IPC implementation for Luajit
 
 ## Dependencies
 - Single-file json implementation: https://github.com/rxi/json.lua
