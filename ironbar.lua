@@ -18,6 +18,8 @@ local function connect()
 	end
 	return fd
 end
+
+--[[
 local function format_packet(_type,...)
 	if argpackets[_type] then
 		local packet = packets[_type]
@@ -32,6 +34,32 @@ local function format_packet(_type,...)
 	end
 	return packets[_type]
 end
+--]]
+--Do the above, but ensure types are correct
+
+local function format_packet(_type,...)
+	if argpackets[_type] then
+		--Validate types first
+		local packet = packets[_type]
+		for k,v in pairs(argpackets[_type]) do
+			if v.arg then
+				local arg = select(v.arg,...)
+				if type(arg) ~= v.type then
+					return nil, "invalid type"
+				end
+				packet[k] = arg
+			else
+				packet[k] = v
+			end
+		end
+		return packet
+	elseif packets[_type] then
+		return packets[_type]
+	else
+		return nil, "invalid packet type"
+	end
+end
+
 --Sending and receiving packets
 local function send_packet(fd,enc_packet)
 	local len = #enc_packet
@@ -108,8 +136,11 @@ local mt = {
 	__call = function(t,k,...)
 		if packets[k] then
 			init()
-			return function(...)
-				return dispatch(sock,k,...)
+			local ok,packet,err = dispatch(sock,k,...)
+			if ok then
+				return ok,packet
+			else
+				error(err)
 			end
 		else
 			error("invalid packet type")

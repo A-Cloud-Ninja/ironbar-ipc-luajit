@@ -27,7 +27,7 @@ See https://github.com/JakeStanger/ironbar/wiki/controlling-ironbar for the full
 
 ## Files within
 - cdefs.lua: Luajit FFI Cdefs for unix socket handling
-- packets.lua: Table format for automated parsing of arguments -> json structures
+- packets.lua: Table format for automated parsing of arguments -> json structures. This can also be used a reference for (and parser for, I suppose) argument order and types.
 - ironbar.lua: Main library, returns a function used to get both the ironbar module and json module used within.
 
 ironbar.lua does not directly "expose" any given IPC message. It uses lua metatables to automatically use indexing on the `ironbar` module to pass through to the corresponding IPC packet (i.e `ironbar.ping()` -> turns into an internal `dispatch(ping)` call)
