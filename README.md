@@ -14,15 +14,16 @@ ironbar.ping()
 ironbar.get("key")
 ironbar.set("key","value")
 ironbar.load_css("/path/to/stylesheet.css")
+...
 --I also built some goofy syntax for using it this way
 ironbar("ping")
 ironbar("get","key")
 ironbar("set","key","value")
 ironbar("load_css","/path/to/stylesheet.css")
+...
 ```
 All of these will return the decoded json as a table for use.
-
-This implementation currently has support for features in PR #237 https://github.com/JakeStanger/ironbar/pull/237
+See https://github.com/JakeStanger/ironbar/wiki/controlling-ironbar for the full list.
 
 ## Files within
 - cdefs.lua: Luajit FFI Cdefs for unix socket handling

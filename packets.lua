@@ -31,9 +31,6 @@ packets.get_visible = {
 	type = "get_visible",
 	bar_name = ""
 }
---[[
-Pending PR #237: https://github.com/JakeStanger/ironbar/pull/237
---]]
 packets.toggle_popup = {
 	type = "toggle_popup",
 	bar_name = "",
@@ -72,9 +69,6 @@ argpackets.get_visible = {
 	type = "get_visible",
 	bar_name = {arg=1}
 }
---[[
-Pending PR #237: https://github.com/JakeStanger/ironbar/pull/237
---]]
 argpackets.toggle_popup = {
 	type = "toggle_popup",
 	bar_name = {arg=1},
