@@ -22,12 +22,7 @@ ironbar("load_css","/path/to/stylesheet.css")
 ```
 All of these will return the decoded json as a table for use.
 
-This implementation currently has support for features in PR #236 https://github.com/JakeStanger/ironbar/pull/236
-```lua
-ironbar.set_visible("bar_name",true)
-ironbar("get_visible","bar_name")
-```
-
+This implementation currently has support for features in PR #237 https://github.com/JakeStanger/ironbar/pull/237
 
 ## Files within
 - cdefs.lua: Luajit FFI Cdefs for unix socket handling
