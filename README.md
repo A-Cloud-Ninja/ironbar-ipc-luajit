@@ -14,13 +14,13 @@ ironbar.ping()
 ironbar.get("key")
 ironbar.set("key","value")
 ironbar.load_css("/path/to/stylesheet.css")
-...
+```
+```lua
 --I also built some goofy syntax for using it this way
 ironbar("ping")
 ironbar("get","key")
 ironbar("set","key","value")
 ironbar("load_css","/path/to/stylesheet.css")
-...
 ```
 All of these will return the decoded json as a table for use.
 See https://github.com/JakeStanger/ironbar/wiki/controlling-ironbar for the full list.
